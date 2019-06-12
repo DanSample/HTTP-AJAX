@@ -1,5 +1,6 @@
 import React from 'react';
 import Friend from './Components/Friend';
+import FriendForm from './Components/FriendForm';
 import axios from 'axios';
 import './App.css';
 
@@ -25,6 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <FriendForm />
         {this.state.friends.map(friend => (
           <div className="friend-container" key={friend.id}>
             <Friend key={friend.id} friend={friend} />
