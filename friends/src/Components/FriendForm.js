@@ -11,7 +11,7 @@ import {
   Input
 } from 'reactstrap';
 
-class ModalExample extends React.Component {
+class FriendForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,20 +41,39 @@ class ModalExample extends React.Component {
             <Form>
               <FormGroup>
                 <Label>Name</Label>
-                <Input placeholder="Friend's name" />
+                <Input
+                  type="text"
+                  ref="name"
+                  placeholder="Friend's name"
+                  onChange={this.props.handleName}
+                />
               </FormGroup>
               <FormGroup>
                 <Label>Age</Label>
-                <Input placeholder="Friend's age" />
+                <Input
+                  type="text"
+                  ref="age"
+                  placeholder="Friend's age"
+                  onChange={this.props.handleAge}
+                />
               </FormGroup>
               <FormGroup>
                 <Label>Email</Label>
-                <Input placeholder="Friend's email" />
+                <Input
+                  type="text"
+                  ref="email"
+                  placeholder="Friend's email"
+                  onChange={this.props.handleEmail}
+                />
               </FormGroup>
             </Form>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>
+            <Button
+              type="submit"
+              color="primary"
+              onClick={this.props.handleSubmit}
+            >
               Add Friend
             </Button>{' '}
             <Button color="secondary" onClick={this.toggle}>
@@ -67,4 +86,4 @@ class ModalExample extends React.Component {
   }
 }
 
-export default ModalExample;
+export default FriendForm;
